@@ -16,6 +16,10 @@
     display: none;
 }
 
+textarea{
+    resize: vertical;
+}
+
 nav{
     display: flex;
     align-items: center;
