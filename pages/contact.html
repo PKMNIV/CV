@@ -28,7 +28,44 @@
         </nav>
     </header>
 
-    insert a suspicious, concerning, maybe even an alarming piece of text here.
+    <div class="container">
+        <!--Form heeft voornaam, achternaam, email, telefoonnummer, bedrijfsnaam en bericht. telefoonnummer en bedrijfsnaam zijn optioneel. Input zit in de label-->
+        <form action="placeholder">
+            <div class="grid">
+                <label for="firstname">
+                    Voornaam
+                    <input type="text" id="firstname" name="firstname" placeholder="Voornaam" required>
+                </label>
+
+                <label for="lastname">
+                    Achternaam
+                    <input type="text" id="lastname" name="lastname" placeholder="Achternaam" required>
+                </label>
+            </div>
+            <label for="email">
+                Email
+                <input type="email" id="email" name="email" placeholder="Email" required>
+            </label>
+
+            <label for="phone">
+                Telefoonnummer
+                <input type="tel" id="phone" name="phone" placeholder="Telefoonnummer">
+            </label>
+
+            <label for="company">
+                Bedrijfsnaam
+                <input type="text" id="company" name="company" placeholder="Bedrijfsnaam">
+            </label>
+
+            <label for="message">
+                Bericht
+                <textarea name="message" id="message" cols="30" rows="10" placeholder="Bericht" required></textarea>
+            </label>
+
+            <input type="submit" value="Verstuur">
+        </form>
+    </div>
+
 </body>
 
 </html>
