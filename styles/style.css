@@ -1,64 +1,53 @@
 :root{
-    --main-color: #333;
+    --dark-shade: #333;
+    --light-shade: #fff;
     --brand-color: aqua;
 }
 
-header{
-    background-color: var(--main-color);
-    color: #fff;
+#header{
+    color: var(--dark-shade);
     padding: 15px !important;
     font-size: 35px;
     font-weight: bold;
     margin-bottom: 20px;
 }
 
-#nav-toggle.open{
-    position: absolute;
-    padding: 15px 0px;
-    top: 15px;
-    left: 15px;
-    cursor: pointer;
-    z-index: 10000000;
+#nav-toggle{
+    display: none;
 }
 
 nav{
-    background-color: var(--main-color);
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    display: none;
-    z-index: 10000;
-}
-
-#nav-menu.open{
-    display: block;
 }
 
 nav > ul{
-    font-size: 5vh;
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 
-nav > ul > li{
-    margin: 3vh 0;
+nav > ul > li > a{
+    color: var(--primary);
+    text-decoration: none;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 h1{
-    color: var(--brand-color);
+    color: var(--primary);
 }
 
 .indexContainer{
-
+    margin-bottom: 80px;
 }
 
 .indexContainer > img{
@@ -70,8 +59,84 @@ h1{
 
 .indexContainer > div{
     max-width: 60ch;
-
 }
+
+.indexContainer > div > p{
+    margin-bottom: 10%;
+}
+
+
+
+@media screen and (max-aspect-ratio: 8/9){
+
+    #nav-toggle{
+        display: inline-block;
+    }
+
+    #nav-toggle.open{
+        position: fixed;
+        padding: 15px 0px;
+        top: 15px;
+        left: 15px;
+        cursor: pointer;
+        z-index: 10000000;
+    }
+    
+    nav{
+        background-color: var(--light-shade);
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        display: none;
+        z-index: 10000;
+    }
+    
+    #nav-menu.open{
+        display: block;
+    }
+    
+    nav > ul{
+        font-size: 5vh;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    nav > ul > li{
+        margin: 3vh 0;
+    }
+}
+
+@media screen and (min-width: 851px) and (min-aspect-ratio: 8/9){
+.indexContainer{
+    min-height: calc(100vh - 93px - 80px - 20px);
+}
+.fullscreen{
+    min-height: 100vh;
+    padding: 20px;
+}
+}
+
+@media screen and (min-width: 991px) and (min-aspect-ratio: 8/9){
+    .indexContainer{
+        min-height: calc(100vh - 96.5px - 80px - 20px);
+    }
+    }
+
+    @media screen and (min-width: 1200px) and (min-aspect-ratio: 8/9){
+        .indexContainer{
+            min-height: calc(100vh - 100px - 80px - 20px);
+        }
+
+        }
 
 @media screen and (min-aspect-ratio: 8/9) {
 
@@ -96,7 +161,6 @@ h1{
 
     .indexContainer > img{
         width: 40%;
-        max-height: 80vh;
         object-fit: cover;
         margin-bottom: 10px;
         z-index: 1;
