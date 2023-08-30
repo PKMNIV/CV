@@ -22,13 +22,17 @@
             <ul>
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="about.html">Over mij</a></li>
-                <li><a href="project.html">Projectpagina</a></li>
+                <li><a href="project.php">Projectpagina</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
-
-
+    <?php
+    include 'db_connection.php';
+    $conn = OpenCon();
+    echo "Connected Successfully";
+    CloseCon($conn);
+    ?>
 </body>
 
 </html>
