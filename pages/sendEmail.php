@@ -8,7 +8,7 @@ $company = $_POST['company'];
 $subject = $_POST['subject'];
 $message = $_POST['message'];
 
-$recipient = "n.reijden@gmail.com";
+$recipient = " ";
 
 
 mail($recipient, $subject, $message, "From:" . $email) or die("Error!");
