@@ -27,12 +27,9 @@
             </ul>
         </nav>
     </header>
-    <?php
-    include 'db_connection.php';
-    $conn = OpenCon();
-    echo "Connected Successfully";
-    CloseCon($conn);
-    ?>
+<?php
+
+?>
 </body>
 
 </html>
