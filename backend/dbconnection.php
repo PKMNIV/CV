@@ -39,3 +39,19 @@ function confirm_result_set($result_set){
 }
 
 
+
+//add to the database. The values are ID, Title, Description, Creation Date and Image. The table is name is a variable.
+function db_add($connection, $table, $id, $title, $description, $creation_date, $image){
+    $sql = "INSERT INTO " . $table . " ";
+    $sql .= "(ID, Title, Description, Creation_Date, Image) ";
+    $sql .= "VALUES (";
+    $sql .= "'" . $id . "',";
+    $sql .= "'" . $title . "',";
+    $sql .= "'" . $description . "',";
+    $sql .= "'" . $creation_date . "',";
+    $sql .= "'" . $image . "'";
+    $sql .= ")";
+    $result = mysqli_query($connection, $sql);
+    confirm_result_set($result);
+    return $result;
+}
