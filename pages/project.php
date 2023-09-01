@@ -9,7 +9,7 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="../styles/style.css">
-    <script src="../scripts/script.js" async></script>
+    <script src="../scripts/script.js" defer></script>
     <title>Document</title>
 </head>
 
@@ -28,6 +28,32 @@
         </nav>
     </header>
 <?php
+require("../backend/dbconnection.php");
+//make a connection with the db
+$connection = db_connect();
+//query the db
+$query = "SELECT * FROM Projecten";
+$result = db_query($connection, $query);
+
+//Print the ID, Title, Description, Creation Date and Image of the Projecten
+while($row = mysqli_fetch_assoc($result)){
+    echo "<div class='container'>";
+    echo "<article class='card'>";
+    echo "<header class='card-title'>";
+    echo "<h3>" . $row['Title'] . "</h3>";
+    echo "</header>";
+    echo "<div class='card-image'>";
+    echo "<img src='../images/" . $row['Image'] . "' alt=''>";
+    echo "</div>";
+    echo "<div class='card-description'>";
+    echo "<p>" . $row['Description'] . "</p>";
+    echo "</div>";
+    echo "<footer class='card-date'>";
+    echo "<p>" . $row['Creation Date'] . "</p>";
+    echo "</footer>";
+    echo "</article>";
+    echo "</div>";
+}
 
 ?>
 </body>
