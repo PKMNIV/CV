@@ -55,3 +55,17 @@ function db_add($connection, $table, $id, $title, $description, $creation_date, 
     confirm_result_set($result);
     return $result;
 }
+
+//update the database. The values are ID, Title, Description, Creation Date and Image. The table is name is a variable.
+function db_update($connection, $table, $id, $title, $description, $creation_date, $image){
+    $sql = "UPDATE " . $table . " SET ";
+    $sql .= "Title='" . $title . "', ";
+    $sql .= "Description='" . $description . "', ";
+    $sql .= "Creation_Date='" . $creation_date . "', ";
+    $sql .= "Image='" . $image . "' ";
+    $sql .= "WHERE ID='" . $id . "' ";
+    $sql .= "LIMIT 1";
+    $result = mysqli_query($connection, $sql);
+    confirm_result_set($result);
+    return $result;
+}
