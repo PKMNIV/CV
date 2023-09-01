@@ -69,3 +69,13 @@ function db_update($connection, $table, $id, $title, $description, $creation_dat
     confirm_result_set($result);
     return $result;
 }
+
+//delete from the database. The values are ID, Title, Description, Creation Date and Image. The table is name is a variable.
+function db_delete($connection, $table, $id){
+    $sql = "DELETE FROM " . $table . " ";
+    $sql .= "WHERE ID='" . $id . "' ";
+    $sql .= "LIMIT 1";
+    $result = mysqli_query($connection, $sql);
+    confirm_result_set($result);
+    return $result;
+}
