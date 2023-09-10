@@ -12,3 +12,7 @@ $recipient = " ";
 
 
 mail($recipient, $subject, $message, "From:" . $email) or die("Error!");
+
+echo "Email sent!";
+
+header("refresh:5; url=../index.html");
